@@ -1,5 +1,6 @@
 from fastapi  import FastAPI , Header, HTTPException
 from pydantic import BaseModel
+from typing import Union
 
 fake_secret_token = "nabagereka"
 app = FastAPI()
