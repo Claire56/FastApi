@@ -11,7 +11,7 @@ def test_read_main():
     assert response.json() == {"message": "My FastAPI world"}
 
 def test_read_item():
-    response = client.get("/items/foo", headers={"X-Token": "coneofsilence"})
+    response = client.get("/items/foo", headers={"X-Token": "nabagereka"})
     assert response.status_code == 200
     assert response.json() == {
         "id": "foo",
@@ -27,7 +27,7 @@ def test_read_item_bad_token():
 
 
 def test_read_inexistent_item():
-    response = client.get("/items/baz", headers={"X-Token": "coneofsilence"})
+    response = client.get("/items/baz", headers={"X-Token": "nabagereka"})
     assert response.status_code == 404
     assert response.json() == {"detail": "Item not found"}
 
@@ -35,7 +35,7 @@ def test_read_inexistent_item():
 def test_create_item():
     response = client.post(
         "/items/",
-        headers={"X-Token": "coneofsilence"},
+        headers={"X-Token": "nabagereka"},
         json={"id": "foobar", "title": "Foo Bar", "description": "The Foo Barters"},
     )
     assert response.status_code == 200
@@ -59,7 +59,7 @@ def test_create_item_bad_token():
 def test_create_existing_item():
     response = client.post(
         "/items/",
-        headers={"X-Token": "coneofsilence"},
+        headers={"X-Token": "nabagereka"},
         json={
             "id": "foo",
             "title": "The Foo ID Stealers",
