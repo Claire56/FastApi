@@ -2,6 +2,6 @@ from fastapi  import FastAPI
 
 app = FastAPI()
 
-app.get('/')
+@app.get("/")
 async def root():
-    return {'messege': 'My FastAPI world'}
+    return {"message": "My FastAPI world"}
